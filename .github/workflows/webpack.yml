@@ -6,17 +6,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: '18.0.0'
+    # strategy:
+    #   matrix:
+    #     node-version: '18.0.0'
 
     steps:
       - uses: actions/checkout@v3
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 17.8.0
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '17.8.0'
 
       - name: Install
         run: yarn install
