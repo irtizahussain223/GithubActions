@@ -12,7 +12,11 @@ jobs:
         with:
           node-version: '17.8.0'
           registry-url: 'https://registry.npmjs.org/'
+
       - name: Install dependencies using yarn
         run: yarn install
+        working-directory: ./GithubActions
+
       - name: Build the application
         run: yarn build
+        working-directory: ./GithubActions
