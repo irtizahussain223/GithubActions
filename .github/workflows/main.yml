@@ -3,16 +3,15 @@ name: Deploy wendy to dev
 on: workflow_dispatch
 
 jobs:
-  first_job:
-    name: My First job
+  build_and_deploy:
+    name: Building and deploying app
     runs-on: ubuntu-latest
     steps:
-      - name: Step 1
-        run: echo "This is the first job."
-
-  second_job:
-    name: My second job
-    runs-on: ubuntu-latest
-    steps:
-      - name: Step 1
-        run: echo "This is the second job."
+      - name: Install node.js and yarn
+        uses: actions/setup-node@v2
+        with:
+          node-version: '17.8.0'
+      - name: Install dependencies using yarn
+        run: yarn install
+      - name: Build the application
+        run: yarn run build
