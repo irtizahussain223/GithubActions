@@ -14,4 +14,4 @@ jobs:
       - name: Install dependencies using yarn
         run: yarn install
       - name: Build the application
-        run: yarn run build
+        run: yarn build
